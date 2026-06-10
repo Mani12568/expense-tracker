@@ -34,7 +34,7 @@ You'll need Node.js installed (v18 or higher).
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/yourusername/expense-tracker.git
+git clone https://github.com/Mani12568/expense-tracker.git
 cd expense-tracker
 ```
 
