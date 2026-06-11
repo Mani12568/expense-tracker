@@ -14,7 +14,7 @@ function ExpenseFilter({ filters, onFilterChange }) {
       onFilterChange({ ...filters, startDate: firstDayOfMonth, endDate: today });
     } else if (type === 'lastMonth') {
       onFilterChange({ ...filters, startDate: firstDayOfLastMonth, endDate: lastDayOfLastMonth });
-    } else if (type === 'all') {
+    } else {
       onFilterChange({ ...filters, startDate: '', endDate: '' });
     }
   };
@@ -23,7 +23,6 @@ function ExpenseFilter({ filters, onFilterChange }) {
     <div className="bg-white rounded-xl shadow p-4 mb-6">
       <h2 className="text-sm font-semibold text-gray-600 mb-3">🔍 Filter Expenses</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-        {/* Category Filter */}
         <div>
           <label className="block text-xs font-medium text-gray-500 mb-1">Category</label>
           <select
@@ -37,7 +36,6 @@ function ExpenseFilter({ filters, onFilterChange }) {
           </select>
         </div>
 
-        {/* Start Date */}
         <div>
           <label className="block text-xs font-medium text-gray-500 mb-1">From Date</label>
           <input
@@ -48,7 +46,6 @@ function ExpenseFilter({ filters, onFilterChange }) {
           />
         </div>
 
-        {/* End Date */}
         <div>
           <label className="block text-xs font-medium text-gray-500 mb-1">To Date</label>
           <input
@@ -59,7 +56,6 @@ function ExpenseFilter({ filters, onFilterChange }) {
           />
         </div>
 
-        {/* Quick Filters */}
         <div>
           <label className="block text-xs font-medium text-gray-500 mb-1">Quick Select</label>
           <div className="flex gap-2">

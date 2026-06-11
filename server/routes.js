@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('./database');
 const { v4: uuidv4 } = require('uuid');
 
-// GET all expenses (with optional filters)
 router.get('/', (req, res) => {
   try {
     const { category, startDate, endDate } = req.query;
@@ -31,7 +30,6 @@ router.get('/', (req, res) => {
   }
 });
 
-// GET summary
 router.get('/summary', (req, res) => {
   try {
     const now = new Date();
@@ -59,12 +57,10 @@ router.get('/summary', (req, res) => {
   }
 });
 
-// POST add new expense
 router.post('/', (req, res) => {
   try {
     const { amount, category, date, note } = req.body;
 
-    // Validation
     if (!amount || amount <= 0) {
       return res.status(400).json({ error: 'Amount must be a positive number' });
     }
@@ -87,7 +83,6 @@ router.post('/', (req, res) => {
   }
 });
 
-// PUT update expense
 router.put('/:id', (req, res) => {
   try {
     const { amount, category, date, note } = req.body;
@@ -109,7 +104,6 @@ router.put('/:id', (req, res) => {
   }
 });
 
-// DELETE expense
 router.delete('/:id', (req, res) => {
   try {
     const { id } = req.params;

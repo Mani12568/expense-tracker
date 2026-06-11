@@ -20,7 +20,6 @@ function App() {
     endDate: ''
   });
 
-  // Fetch expenses whenever filters change
   useEffect(() => {
     fetchExpenses();
     fetchSummary();
@@ -93,7 +92,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
       <div className="bg-blue-600 text-white px-6 py-4 shadow">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div>
@@ -109,35 +107,24 @@ function App() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-5xl mx-auto px-4 py-6">
-        {/* Error Message */}
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-600 rounded-xl p-4 mb-6 text-sm">
             {error}
           </div>
         )}
 
-        {/* Summary Panel */}
         <SummaryPanel summary={summary} />
-
-        {/* Chart */}
         <ExpenseChart perCategory={summary?.perCategory} />
-
-        {/* Add/Edit Form */}
         <ExpenseForm
           onSubmit={handleAddOrUpdate}
           editingExpense={editingExpense}
           onCancelEdit={() => setEditingExpense(null)}
         />
-
-        {/* Filters */}
         <ExpenseFilter
           filters={filters}
           onFilterChange={setFilters}
         />
-
-        {/* Loading */}
         {loading ? (
           <div className="text-center py-12 text-gray-400">Loading expenses...</div>
         ) : (

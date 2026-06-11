@@ -11,7 +11,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
   });
   const [errors, setErrors] = useState({});
 
-  // If editing, fill the form with existing data
   useEffect(() => {
     if (editingExpense) {
       setForm({
@@ -54,7 +53,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
         {editingExpense ? '✏️ Edit Expense' : '➕ Add New Expense'}
       </h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Amount */}
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Amount (₹)</label>
           <input
@@ -68,7 +66,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
           {errors.amount && <p className="text-red-500 text-xs mt-1">{errors.amount}</p>}
         </div>
 
-        {/* Category */}
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Category</label>
           <select
@@ -85,7 +82,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
           {errors.category && <p className="text-red-500 text-xs mt-1">{errors.category}</p>}
         </div>
 
-        {/* Date */}
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Date</label>
           <input
@@ -99,7 +95,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
           {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
         </div>
 
-        {/* Note */}
         <div>
           <label className="block text-sm font-medium text-gray-600 mb-1">Note (optional)</label>
           <input
@@ -112,7 +107,6 @@ function ExpenseForm({ onSubmit, editingExpense, onCancelEdit }) {
           />
         </div>
 
-        {/* Buttons */}
         <div className="md:col-span-2 flex gap-3">
           <button
             type="submit"

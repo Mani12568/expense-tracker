@@ -8,7 +8,6 @@ function SummaryPanel({ summary }) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-      {/* Total This Month */}
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
         <p className="text-sm text-blue-600 font-medium">Total This Month</p>
         <p className="text-2xl font-bold text-blue-700 mt-1">
@@ -16,18 +15,18 @@ function SummaryPanel({ summary }) {
         </p>
       </div>
 
-      {/* Highest Expense */}
       <div className="bg-red-50 border border-red-200 rounded-xl p-4">
         <p className="text-sm text-red-600 font-medium">Highest Expense</p>
         <p className="text-2xl font-bold text-red-700 mt-1">
           {formatAmount(summary?.highest?.amount)}
         </p>
         {summary?.highest && (
-          <p className="text-xs text-red-500 mt-1">{summary.highest.category} — {summary.highest.note || 'No note'}</p>
+          <p className="text-xs text-red-500 mt-1">
+            {summary.highest.category} — {summary.highest.note || 'No note'}
+          </p>
         )}
       </div>
 
-      {/* Per Category */}
       <div className="bg-green-50 border border-green-200 rounded-xl p-4">
         <p className="text-sm text-green-600 font-medium">By Category</p>
         {summary?.perCategory?.length > 0 ? (
