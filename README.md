@@ -7,9 +7,8 @@ This is my submission for the Studio Graphene Full Stack Developer Assessment â€
 ---
 
 ## Live Demo
-- Frontend: (add after deployment)
-- Backend API: (add after deployment)
-
+- Frontend: https://expense-tracker-alpha-inky.vercel.app
+- Backend API: https://expense-tracker-swn8.onrender.com
 ---
 
 ## Tech Stack
