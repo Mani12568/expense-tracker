@@ -6,7 +6,7 @@ import ExpenseFilter from './components/ExpenseFilter';
 import SummaryPanel from './components/SummaryPanel';
 import ExpenseChart from './components/ExpenseChart';
 
-const API = 'http://localhost:5000/api/expenses';
+const API = 'https://expense-tracker-swn8.onrender.com/api/expenses';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
