@@ -1,17 +1,20 @@
-const Database = require('better-sqlite3');
-const path = require('path');
+const { Pool } = require('pg');
+require('dotenv').config();
 
-const db = new Database(path.join(__dirname, 'expenses.db'));
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+});
 
-db.exec(`
+pool.query(`
   CREATE TABLE IF NOT EXISTS expenses (
-    id TEXT PRIMARY KEY,
-    amount REAL NOT NULL,
+    id UUID PRIMARY KEY,
+    amount NUMERIC NOT NULL,
     category TEXT NOT NULL,
-    date TEXT NOT NULL,
+    date DATE NOT NULL,
     note TEXT,
-    created_at TEXT DEFAULT (datetime('now'))
+    created_at TIMESTAMP DEFAULT NOW()
   )
 `);
 
-module.exports = db;
+module.exports = pool;
