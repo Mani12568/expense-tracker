@@ -19,9 +19,11 @@ This is my submission for the Studio Graphene Full Stack Developer Assessment �
 - Axios — for making API calls to the backend
 - Recharts — easy to use chart library that works well with React
 
-**Backend**
+### Backend
+
 - Node.js + Express — simple and straightforward for building REST APIs
-- better-sqlite3 — I chose SQLite so data doesn't reset every time the server restarts, and it needs zero configuration compared to MongoDB or PostgreSQL
+- PostgreSQL (Neon) — migrated from SQLite to a proper hosted database for better reliability and to practice working with a production-grade database
+- pg — official PostgreSQL client for Node.js
 - uuid — to generate unique IDs for each expense
 - nodemon — auto restarts server during development
 
@@ -88,10 +90,10 @@ Frontend runs on http://localhost:5173
 - Currency formatted in Indian Rupees ₹
 - Form validation — no negative amounts, no future dates, category is required
 
-**Bonus**
-- Export expenses as CSV
-- Data persists with SQLite — doesn't reset on server restart
+### Bonus
 
+- Export expenses as CSV
+- Migrated from SQLite to PostgreSQL (Neon) for a more production-realistic setup, including converting all queries from synchronous SQLite calls to async PostgreSQL queries
 ---
 
 ## What I'd Improve With More Time
